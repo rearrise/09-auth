@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api } from "../../app/api/api";
 import { cookies } from "next/headers";
 import type { NotesResponse } from "@/types/api";
 import type { Note } from "@/types/note";
