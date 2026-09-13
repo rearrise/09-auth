@@ -47,5 +47,5 @@ export async function checkSession() {
   const response = await api.get("/auth/session", {
     headers: { Cookie: cookieStore.toString() },
   });
-  return response.data;
+  return response;
 }

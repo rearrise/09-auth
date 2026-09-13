@@ -8,7 +8,7 @@ export interface RegisterRequest {
   password: string;
 }
 
-interface UpdateUser {
+export interface UpdateUser {
   email: string;
   username: string;
 }
