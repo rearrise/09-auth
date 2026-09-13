@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL + "/api";
+const baseURL = "https://notehub-api.goit.study";
 
 export const api = axios.create({
   baseURL,
