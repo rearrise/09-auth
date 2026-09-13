@@ -8,10 +8,13 @@ import { useAuthStore } from "@/lib/store/authStore";
 export default function Edit() {
   const router = useRouter();
   const { user, setUser } = useAuthStore();
+  if (!user) {
+    return null;
+  }
   const handleSubmit = async (formData: FormData) => {
     const formValues: UpdateUser = {
       username: formData.get("username") as string,
-      email: formData.get("email") as string,
+      email: user?.email,
     };
     const response = await updateMe(formValues);
     if (response) {
@@ -24,7 +27,7 @@ export default function Edit() {
         <h1 className={css.formTitle}>Edit Profile</h1>
 
         <Image
-          src="user avatar"
+          src={user.avatar}
           alt="User Avatar"
           width={120}
           height={120}
@@ -38,12 +41,12 @@ export default function Edit() {
               id="username"
               name="username"
               type="text"
-              defaultValue={user?.username}
+              defaultValue={user.username}
               className={css.input}
             />
           </div>
 
-          <p>Email: {user?.email}</p>
+          <p>Email: {user.email}</p>
 
           <div className={css.actions}>
             <button type="submit" className={css.saveButton}>

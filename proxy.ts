@@ -27,10 +27,10 @@ export async function proxy(request: NextRequest) {
       if (setCookie) {
         const cookieArray = Array.isArray(setCookie) ? setCookie : [setCookie];
         for (const cookieStr of cookieArray) {
-          const parsed = parseSetCookie(cookieStr);
+          const { name, value, ...options } = parseSetCookie(cookieStr);
 
-          if (parsed.value) {
-            cookieStore.set(parsed.name, parsed.value, parsed);
+          if (value) {
+            cookieStore.set(name, value, options);
           }
         }
 
