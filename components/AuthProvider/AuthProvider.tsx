@@ -1,8 +1,8 @@
 "use client";
 
 import { checkSession, getMe } from "@/lib/api/clientApi";
-import { useAuthStore } from "@/lib/store/noteStore";
-import { ReactNode, useEffect } from "react";
+import { useAuthStore } from "@/lib/store/authStore";
+import { useEffect } from "react";
 
 interface Props {
   children: React.ReactNode;

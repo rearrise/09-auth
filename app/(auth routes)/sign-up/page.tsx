@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import css from "./SignUpPage.module.css";
 import { useState } from "react";
-import { useAuthStore } from "@/lib/store/noteStore";
+import { useAuthStore } from "@/lib/store/authStore";
 import { register, RegisterRequest } from "@/lib/api/clientApi";
 export default function SignUpPage() {
   const router = useRouter();
