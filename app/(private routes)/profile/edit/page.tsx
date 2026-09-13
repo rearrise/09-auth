@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from "next/navigation";
 import css from "./EditProfilePage.module.css";
 import { updateMe, UpdateUser } from "@/lib/api/clientApi";
