@@ -1,4 +1,4 @@
-import { api } from "../../app/api/api";
+import { api } from "./api";
 import type { CreateNote, Note } from "@/types/note";
 import type { NotesResponse } from "@/types/api";
 import { User } from "@/types/user";
